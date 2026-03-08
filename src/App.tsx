@@ -5,7 +5,6 @@ import { Layout } from './components/Layout';
 import { PRODUCTS } from './data/mockData';
 import { Search, ArrowUpRight } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
-import { AuthProvider } from './contexts/AuthContext';
 
 function AppContent() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -21,11 +20,9 @@ function AppContent() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <LanguageProvider>
-        <AppContent />
-      </LanguageProvider>
-    </AuthProvider>
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
