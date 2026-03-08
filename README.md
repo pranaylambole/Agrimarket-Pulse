@@ -1,20 +1,99 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🌾 Agrimarket Pulse
 
-# Run and deploy your AI Studio app
+A comprehensive **agricultural market price tracking and comparison tool** built for Indian farmers, providing real-time commodity prices, trend analysis, and market insights — available in multiple regional languages.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/d7d26ff7-2ae0-44fa-873c-97b2109ba45d
+## ✨ Features
 
-## Run Locally
+- 📊 **Live Price Dashboard** — Track current prices for cereals, vegetables, fruits, and pulses
+- 🔄 **Commodity Comparison Tool** — Compare prices across multiple commodities side by side
+- 📈 **Price Trend Charts** — Visualize historical price movements with interactive recharts
+- 🌐 **Multilingual Support** — Switch between English, Hindi, Marathi, Tamil, Telugu, and more
+- 🔍 **Smart Search & Filter** — Search all commodities by name or category
+- 🔐 **Authentication** — Sign up / Sign in to personalize your experience
 
-**Prerequisites:**  Node.js
+---
 
+## 🛠️ Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+| Layer | Technology |
+|-------|------------|
+| Frontend | React 19 + TypeScript |
+| Styling | Tailwind CSS v4 |
+| Charts | Recharts |
+| Icons | Lucide React |
+| Animations | Motion (Framer Motion) |
+| Build Tool | Vite |
+| Backend (optional) | Express + SQLite (better-sqlite3) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18 or above
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/pranaylambole/Agrimarket-Pulse.git
+cd Agrimarket-Pulse
+
+# Install dependencies
+npm install
+```
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📁 Project Structure
+
+```
+agrimarket-pulse/
+├── src/
+│   ├── components/       # UI components (Dashboard, Layout, ComparisonTool, etc.)
+│   ├── contexts/         # React context (LanguageContext)
+│   ├── data/             # Mock data & translations
+│   ├── lib/              # Utility functions
+│   ├── App.tsx           # Root component
+│   └── main.tsx          # Entry point
+├── index.html
+├── package.json
+└── vite.config.ts
+```
+
+---
+
+## 🌍 Supported Languages
+
+- English
+- हिन्दी (Hindi)
+- मराठी (Marathi)
+- தமிழ் (Tamil)
+- తెలుగు (Telugu)
+- ಕನ್ನಡ (Kannada)
+- বাংলা (Bengali)
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
