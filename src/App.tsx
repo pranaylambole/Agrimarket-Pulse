@@ -5,6 +5,7 @@ import { Layout } from './components/Layout';
 import { PRODUCTS } from './data/mockData';
 import { Search, ArrowUpRight } from 'lucide-react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 function AppContent() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -20,16 +21,18 @@ function AppContent() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <AuthProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </AuthProvider>
   );
 }
 
 function AllProductsView() {
   const [search, setSearch] = useState('');
   const { t, tProduct } = useLanguage();
-  
+
   const getCategoryLabel = (cat: string) => {
     if (cat === 'Cereals') return t('cereals');
     if (cat === 'Vegetables') return t('vegetables');
@@ -42,7 +45,7 @@ function AllProductsView() {
     const productName = tProduct(p.id).toLowerCase();
     const categoryName = getCategoryLabel(p.category).toLowerCase();
     return productName.includes(search.toLowerCase()) ||
-           categoryName.includes(search.toLowerCase());
+      categoryName.includes(search.toLowerCase());
   });
 
   return (
@@ -88,9 +91,8 @@ function AllProductsView() {
                     ₹{product.currentPrice}
                   </td>
                   <td className="px-6 py-4 text-right">
-                    <span className={`inline-flex items-center text-sm font-medium ${
-                      product.change >= 0 ? 'text-green-600' : 'text-red-600'
-                    }`}>
+                    <span className={`inline-flex items-center text-sm font-medium ${product.change >= 0 ? 'text-green-600' : 'text-red-600'
+                      }`}>
                       {product.change >= 0 ? '+' : ''}{product.change}%
                     </span>
                   </td>
